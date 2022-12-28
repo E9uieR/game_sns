@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('post_title');
-            $table->string('post_body');
-            $table->foreignId('user_id_post')->constrained(); //外部キー
-            $table->foreignId('categorie_id')->constrained();
-            $table->foreignId('game_id')->constrained();
-            $table->timestamps();
+            $table->string('name');
         });
     }
 
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('games');
     }
 };

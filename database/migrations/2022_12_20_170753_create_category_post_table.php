@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categoire_game', function (Blueprint $table) {
-            $table->unsignedBigInteger('categoire_id');
-            $table->unsignedBigInteger('game_id');
+        Schema::create('category_post', function (Blueprint $table) {
+            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('user_id');
             // 複合主キーを定義
-            $table->primary(['categoire_id','game_id']);
+            // $table->primary(['post_id','user_id']);
             // 指定したカラムに外部キー制約を定義
-            $table->foreign('categoire_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoire_game');
+        Schema::dropIfExists('category_post');
     }
 };
