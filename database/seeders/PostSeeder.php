@@ -20,8 +20,8 @@ class PostSeeder extends Seeder
             'title' => '命名の心得',
             'body' => '命名はデータを基準に考える',
             // 'user_id_post' => '1',
-            // 'categorie_id' => '1',
-            // 'game_id' => '1',
+            'categorie_id' => '1',
+            'game_id' => '1',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);

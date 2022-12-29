@@ -22,13 +22,19 @@
                             <a href="/posts/{{$post->id}}">{{$post->title}}</a>
                         </h2> <!-- postクラスのtitleを使う-->
                         <p class='body'>{{$post->body}}</p>
+                        <p2>カテゴリー</p2>
                         <a href="">{{ $post->category->name }}</a>
-                        <!--<a href=""></a>-->
-                        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
-                        </form>
+                        <p2>ゲーム名</p2>
+                        <a href="">{{ $post->game->name }}</a>
+                        <td>
+                            @if(Auth::user()->id === $post->user_id)
+                                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
+                                </form>
+                            @endif
+                        </td>
                     </div>
                 @endforeach
             </div>

@@ -23,9 +23,9 @@ class PostController extends Controller
     }
     
 
-    public function create(Category $category)
+    public function create(Category $category,Game $game)
     {
-        return view('posts/create')->with(['categories' => $category->get()]);
+        return view('posts/create')->with(['categories' => $category->get(),'games' => $game->get()]);
     }
 
  

@@ -15,8 +15,10 @@
             <div class="content__post">
                 <h3>内容</h3>
                 <p>{{ $post->body }}</p>
+                <p2>カテゴリー</p2>
                 <a href="">{{ $post->category->name }}</a>
-                <!--<a href=""></a>-->
+                <p2>ゲーム名</p2>
+                <a href="">{{ $post->game->name }}</a>
             </div>
         </div>
         <div class="edit">

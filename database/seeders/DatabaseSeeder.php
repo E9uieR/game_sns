@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
                 UsersTableSeeder::class,
                 CategorieSeeder::class,
+                GameSeeder::class
         ]);
         
         // \App\Models\User::factory()->create([
