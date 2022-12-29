@@ -16,7 +16,7 @@ class CategorieSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-                'categories_name' => 'FPS'
+                'name' => 'FPS'
          ]);
     }
 }

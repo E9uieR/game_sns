@@ -16,7 +16,7 @@
                 <h3>内容</h3>
                 <p>{{ $post->body }}</p>
                 <a href="">{{ $post->category->name }}</a>
-                <a href="">{{ $post->game->name }}</a>
+                <!--<a href=""></a>-->
             </div>
         </div>
         <div class="edit">

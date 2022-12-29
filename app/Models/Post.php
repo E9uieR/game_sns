@@ -13,14 +13,14 @@ class Post extends Model
 
         function getPaginateByLimit(int $limit_count = 5)
         {
-            return $this::with('category','game')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+            return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
         }
         
         protected $fillable = [
             'title',
             'body' ,
             'category_id',
-            'game_id'
+            // 'game_id'
         ];
         
         public function category()

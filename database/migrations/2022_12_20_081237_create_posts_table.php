@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('body');
             // $table->foreignId('user_id_post')->constrained(); //外部キー
             $table->foreignId('category_id')->constrained();
-            $table->foreignId('game_id')->constrained();
+            // $table->foreignId('game_id')->constrained();
             $table->timestamps();
         });
     }

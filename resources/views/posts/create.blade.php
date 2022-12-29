@@ -26,14 +26,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="game">
-                <h2>ゲーム</h2>
-                <select name="post[game_id]">
-                    @foreach($games as $game)
-                        <option value="{{ $game->id }}">{{ $game->name }}</option>
-                    @endforeach
-                </select>
-            </div>
+            
             <input type="submit" value="store"/>
         </form>
         <div class="footer">
