@@ -7,6 +7,8 @@ use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Game;
+use App\Models\User;
+use Gate;
 
 class PostController extends Controller
 {

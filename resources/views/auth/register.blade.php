@@ -39,24 +39,6 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
         
-        <!-- 性別の入力欄 -->
-        <div class="form-group row">
-            <label for="role" class="col-md-4 col-form-label text-md-right">Role</label>
-        
-            <div class="col-md-6" style="padding-top: 8px">
-                <input id="role-a" type="radio" name="role" value="admin">
-                <label for="role-a">Admin</label>
-                <input id="role-c" type="radio" name="role" value="customer">
-                <label for="role-c">Customer</label>
-        
-                @if ($errors->has('role'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('role') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
-
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}

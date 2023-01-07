@@ -26,15 +26,17 @@
                         <a href="">{{ $post->category->name }}</a>
                         <p2>ゲーム名</p2>
                         <a href="">{{ $post->game->name }}</a>
-                        <td>
-                            @if(Auth::user()->id === $post->user_id)
+                        <div>
+                            @can('isAdmin')
                                 <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
                                 </form>
-                            @endif
-                        </td>
+                            @else
+                            <p>管理者のみ削除できます。</p>
+                            @endcan
+                        </div>
                     </div>
                 @endforeach
             </div>

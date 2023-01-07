@@ -32,4 +32,10 @@ class Post extends Model
         {
             return $this->belongsTo(Game::class);
         }
+        
+        
+        public function posts()
+        {
+            return $this->belongsToMany(User::class);
+        }
 }

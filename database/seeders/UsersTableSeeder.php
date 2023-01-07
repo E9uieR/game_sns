@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,17 +17,21 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'UserName_1',
-            'email' => 'User@mailaddress_1.com',
+            'name' => 'a',
+            'email' => 'a@a',
             'password' => bcrypt('password'),
-            'role'     => 'admin'
+            'role'     => 'admin',
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
         ]);
         
         DB::table('users')->insert([
             'name' => 'UserName_2',
             'email' => 'User@mailaddress_2.com',
             'password' => bcrypt('password'),
-            'role' => 'customer'
+            'role' => 'customer',
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
         ]);
     }
 }
