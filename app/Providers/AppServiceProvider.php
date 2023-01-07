@@ -23,8 +23,5 @@ class AppServiceProvider extends ServiceProvider
        Paginator::useBootstrap();
        \URL::forceScheme('https'); //URLをhttps化している
        $this->app['request']->server->set('HTTPS','on');
-    
-        
-        
     }
 }
