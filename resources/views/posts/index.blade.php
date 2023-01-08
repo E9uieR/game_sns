@@ -12,7 +12,9 @@
     <body>
         <x-app-layout>
             <x-slot name="header">
-                <h1 class="font-semibold text-xl text-gray-800 leading-tight">PAGWM</h1>
+                <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+                    Home
+                </h1>
             </x-slot>
             <a href='/posts/create'>募集する！</a>
             <div class='posts'>

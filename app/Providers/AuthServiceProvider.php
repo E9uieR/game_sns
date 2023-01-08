@@ -32,4 +32,5 @@ class AuthServiceProvider extends ServiceProvider
 
         });
     }
+    // こういったところで、全角空白をいれても教えてくれないから注意
 }
