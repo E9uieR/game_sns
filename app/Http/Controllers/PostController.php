@@ -36,7 +36,7 @@ class PostController extends Controller
         $input = $request['post'];
         // dd($request[]);
         $post->fill($input)->save();
-        // dd($post->post_title);
+        // dd($post->title);
         return redirect('/posts/' . $post->id);
     }
     
