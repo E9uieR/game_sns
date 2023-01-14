@@ -17,6 +17,7 @@
                 </h1>
             </x-slot>
             <a href='/posts/create'>募集する！</a>
+            <a href='/twitters/twitter'>取得したデータを見る</a>
             <div class='posts'>
                 @foreach($posts as $post)
                     <div class='post'>

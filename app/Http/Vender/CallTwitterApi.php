@@ -4,6 +4,9 @@ namespace App\Http\Vender;
 
 use Illuminate\Http\Request;
 use Abraham\TwitterOAuth\TwitterOAuth;
+use DateTime;
+use DateTimeZone;
+use Exception;
 
 class callTwitterApi
 {
@@ -13,10 +16,10 @@ class callTwitterApi
     public function __construct()
     {
         $this->t = new TwitterOAuth(
-            env('TWITTER_CLIENT_KEY'),
-            env('TWITTER_CLIENT_SECRET'),
-            env('TWITTER_CLIENT_ID_ACCESS_TOKEN'),
-            env('TWITTER_CLIENT_ID_ACCESS_TOKEN_SECRET'));
+            config('twitter.twitter_client_id',''),
+            config('twitter.twitter_client_secret',''),
+            config('twitter.twitter_client_id_access_token',''),
+            config('twitter.twitter_client_id_access_token_secret',''));
     }
     
     // ツイート検索
@@ -26,7 +29,7 @@ class callTwitterApi
             'q' => $searchWord,
             'count' => 3,
          ]);
-         
+        
         return $d->statuses;
     }
 }

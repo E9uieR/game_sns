@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TwitterController;
 use Illuminate\Support\Facades\Route;
 
 // ->name('index');を書かないと名前付きルートを使えない(navigation.bladeで定義するやつ)
@@ -18,6 +19,7 @@ Route::group(['middleware' =>['auth']],function(){
     Route::put('/posts/{post}', [PostController::class,'update']);
     Route::delete('/posts/{post}', [PostController::class,'delete']);
     Route::get('/posts/{post}/edit', [PostController::class,'edit']);
+    Route::get('/twitters/twitter',[TwitterController::class,'index']);
 });
 
 Route::middleware('auth')->group(function () {
